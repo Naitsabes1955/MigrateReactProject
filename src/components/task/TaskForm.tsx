@@ -2,6 +2,7 @@ import { useState } from "react";
 import {PressButton} from "../ui/Button";
 import {PressInput} from "../ui/Input";
 import { useTasks } from "../../hooks/useTask";
+import '../../styles/components/card.css'
 
 export default function TaskForm(){
     const [title,setTitle] = useState("");

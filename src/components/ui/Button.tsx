@@ -1,4 +1,4 @@
-import '../../styles/components/ui/button.css'
+import '../../styles/ui/Button.css'
 import type { ButtonProps } from '../../types/components'
 
 export function PressButton({children,onClick,type="button"}:ButtonProps){

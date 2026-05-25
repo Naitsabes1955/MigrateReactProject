@@ -1,5 +1,5 @@
 import type {InputProps} from '../../types/components'
-
+import '../../styles/ui/input.css'
 
 
 export function PressInput({value,onChange,placeholder}:InputProps){

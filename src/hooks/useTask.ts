@@ -7,16 +7,18 @@ const STORAGE_KEY = "tasks"
 
 export function useTasks() {
 
-  const [tasks, setTasks] = useState<Task[]>(() => {
+  const [tasks, setTasks] = useState<Task[]>([]);
 
-    const storedTasks = localStorage.getItem(STORAGE_KEY)
-
-    if (!storedTasks) {
-      return []
+  useEffect(() => {
+    const storedTasks = localStorage.getItem(STORAGE_KEY);
+    if (storedTasks) {
+      try {
+        setTasks(JSON.parse(storedTasks));
+      } catch (error) {
+        console.error("Error parsing tasks", error);
+      }
     }
-
-    return JSON.parse(storedTasks) as Task[]
-  })
+  }, []); 
 
   useEffect(() => {
     localStorage.setItem(

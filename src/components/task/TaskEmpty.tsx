@@ -1,3 +1,5 @@
+import '../../styles/components/card.css'
+
 export default function TaskEmpty() {
   return (
     <div className="task-empty">
