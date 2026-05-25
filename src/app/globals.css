@@ -23,10 +23,6 @@
   --shadow-md: 0 4px 12px rgba(0,0,0,.10), 0 2px 4px rgba(0,0,0,.06);
   --shadow-lg: 0 10px 30px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 
-  --font-display: 'Georgia', serif;
-  --font-body:    system-ui, -apple-system, sans-serif;
-  --font-mono:    'Courier New', monospace;
-
   --transition: 160ms cubic-bezier(.4,0,.2,1);
 }
 
@@ -50,14 +46,12 @@ body {
   min-height: 100%;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-display);
   line-height: 1.2;
   font-weight: 700;
 }

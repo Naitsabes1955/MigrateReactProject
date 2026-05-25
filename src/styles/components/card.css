@@ -120,7 +120,7 @@
   padding: 3rem 1rem;
   color: var(--text-muted);
   font-size: 0.95rem;
-  border: 2px dashed var(--border);
+  border: 2px dotted var(--border);
   border-radius: var(--radius-lg);
 }
 
