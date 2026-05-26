@@ -20,7 +20,7 @@ export default function TaskCard({ task, onStart, onFinish, onDelete }: CardProp
           onClick={() => onDelete(task.id)}
           title="Delete Task"
         >
-          ✕
+          Delete
         </button>
       </div>
 

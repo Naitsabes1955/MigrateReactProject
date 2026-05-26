@@ -18,7 +18,7 @@ export function useTasks() {
         console.error("Error parsing tasks", error);
       }
     }
-  }, []); 
+  }, []); //execute code at the moment that a component executed
 
   useEffect(() => {
     localStorage.setItem(
@@ -68,8 +68,7 @@ export function useTasks() {
       })
     )
   }
-
-  function finishTask(id: string) {
+function finishTask(id: string) {
 
     setTasks(prevTasks =>
       prevTasks.map(task => {
@@ -99,8 +98,9 @@ export function useTasks() {
       })
     )
   }
+  
 
   return {
-    tasks,createTask,deleteTask,startTask,finishTask,
+    tasks,createTask,deleteTask,startTask,finishTask
   }
 }

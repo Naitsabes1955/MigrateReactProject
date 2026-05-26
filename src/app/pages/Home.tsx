@@ -1,10 +1,10 @@
 "use client"
-import { PressButton } from "../components/ui/Button";
-import { PressInput } from "../components/ui/Input";
-import TaskCard from "../components/task/TaskCard";
-import TaskEmpty from "../components/task/TaskEmpty";
+import { PressButton } from "../../components/ui/Button";
+import { PressInput } from "../../components/ui/Input";
+import TaskCard from "../../components/task/TaskCard";
+import TaskEmpty from "../../components/task/TaskEmpty";
 import { useState } from "react";
-import { useTasks } from "../hooks/useTask";
+import { useTasks } from "../../hooks/useTask";
 import '../styles/pages/home.css'
 
 export default function Home() {

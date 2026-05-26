@@ -1,21 +1,11 @@
-/* ─── TaskCard ─── */
-
-/* Base card — shared by all statuses */
 [class^="task-card"] {
   background: var(--surface);
-  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 1.125rem 1.25rem;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition), transform var(--transition);
 }
 
-[class^="task-card"]:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
-}
 
-/* Status-tinted left border */
 .task-cardpending    { border-left: 4px solid var(--warning); }
 .task-cardinprogress { border-left: 4px solid var(--accent);  }
 .task-carddone       { border-left: 4px solid var(--success); opacity: 0.75; }
