@@ -5,7 +5,8 @@ import TaskCard from "../../components/task/TaskCard";
 import TaskEmpty from "../../components/task/TaskEmpty";
 import { useState } from "react";
 import { useTasks } from "../../hooks/useTask";
-import '../styles/pages/home.css'
+import '@/styles/pages/home.css'
+import Link from "next/link";
 
 export default function Home() {
     const [title, setTitle] = useState("");
@@ -22,7 +23,11 @@ export default function Home() {
         <header className="home-header">
             <h1>Task Timer</h1>
         </header>
-
+        <p>
+            <Link href={"/dashboard"}>
+                <button className="Button">Go to look Api Information</button>
+            </Link>
+        </p>
         <section className="home-form">
             <PressInput
                 value={title} 
