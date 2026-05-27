@@ -1,17 +1,36 @@
-/* import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
+import type { Task } from "@/types/task";
 
-const TaskSchema = new Schema({
+export const TaskSchema = new Schema({
   title: {
     type: String,
     required: true,
   },
-
-  completed: {
-    type: Boolean,
-    default: false,
+  description: {
+    type: String,
   },
+  status: {
+    type: String,
+    enum: ["Pending" , "inProgress" , "Done"],
+    default: "Pending",
+  },    
+  accumulatedAt: {
+    type: Number,
+    default: 0,
+  },
+  createdAt:{
+    type: Number,
+    default: 0,
+  },
+  startedAt:{
+    type: Number,
+    default: null
+  },
+  finalizedAt:{
+    type: Number,
+    default: Date.now,
+  }
 });
 
-export const Task =
-  mongoose.models.Task ||
-  mongoose.model("Task", TaskSchema); */
+export const TaskModel =
+    mongoose.models.Task || mongoose.model<Task>("Task", TaskSchema);
