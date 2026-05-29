@@ -6,7 +6,7 @@ import TaskEmpty from "../../components/task/TaskEmpty";
 import { useState } from "react";
 import { useTasks } from "../../hooks/useTask";
 import '@/styles/pages/home.css'
-import Link from "next/link";
+import { useRedirect } from "@/components/ui/redirect";
 
 export default function Home() {
     const [title, setTitle] = useState("");
@@ -18,15 +18,23 @@ export default function Home() {
         createTask(trimmed);
         setTitle("");
     }
+    const {goToApiInfo} = useRedirect();
+    const {goToAdmin} = useRedirect();
+    /* const router = useRouter();
+
+    const goToAdmin = () => {
+        router.push("/admin/user")
+    }
+    const goToApiInfo = () => {
+        router.push("/dashboard")
+    } */
     return (
     <div className="home">
         <header className="home-header">
             <h1>Task Timer</h1>
         </header>
         <p>
-            <Link href={"/dashboard"}>
-                <button className="Button">Go to look Api Information</button>
-            </Link>
+            <PressButton onClick={goToApiInfo}>Go to look Api Information</PressButton>
         </p>
         <section className="home-form">
             <PressInput
@@ -35,6 +43,8 @@ export default function Home() {
                 placeholder="Write the name of your task..."
             />
             <PressButton onClick={handleCreate}>Create</PressButton>
+
+            <PressButton onClick={goToAdmin}>Go to Admin</PressButton>
         </section>
 
         <section className="home-list">

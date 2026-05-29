@@ -3,7 +3,8 @@ import { getCharacters } from "@/services/dashboard";
 import type { characters } from "@/types/characters"
 import { useEffect, useState } from "react"
 import '@/styles/components/card.css'
-import Link from "next/link";
+import { PressButton } from "@/components/ui/Button";
+import { useRedirect } from "@/components/ui/redirect";
 
 export default function Characters()  {
     const [character, setCharacter] = useState<characters>();
@@ -17,6 +18,8 @@ export default function Characters()  {
         fetchData();
 
     },[]);
+    const { goBack } = useRedirect();
+
     return(
         <>
             <div className="task-card">
@@ -37,9 +40,10 @@ export default function Characters()  {
                 </div>
                 
             </div>
-            <Link href={"/"}>
-                <button>Go Back</button>
-            </Link>
+
+            <PressButton onClick={goBack}>
+                Go Back
+            </PressButton>
         </>
     )
     
